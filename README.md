@@ -6,7 +6,7 @@ The project is built on a portable, isolated Python environment, which allows ru
 
 ## Installation and Usage
 
-1.  **Clone or download the repository.**
+1.  **Clone or download the repository.** If you downloaded a ZIP archive, unpack it to any convenient directory.
 
 2.  **Run `setup.bat`**. This script will automatically perform all necessary setup steps:
     *   If a local Python environment is not found, it will download a portable version of Python.

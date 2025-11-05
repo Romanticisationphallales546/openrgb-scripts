@@ -23,69 +23,69 @@ set "REQUIREMENTS_FILE=%~dp0requirements.txt"
 
 :: === Check for Python, download if missing ===
 if exist "%PYTHON_EXE%" (
-    echo [INFO] Обнаружена существующая среда Python. Пропускаю загрузку.
+    echo [INFO] Existing Python environment found. Skipping download.
     goto :patch_python
 )
 
-echo [INFO] Локальная среда Python не найдена.
-echo [INFO] Загрузка Python %PYTHON_VERSION% (Embeddable)...
+echo [INFO] Local Python environment not found.
+echo [INFO] Downloading Python %PYTHON_VERSION% (Embeddable)...
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri '%PYTHON_URL%' -OutFile '%PYTHON_ZIP%'"
 if errorlevel 1 (
-    echo [ERROR] Не удалось загрузить архив Python. Проверьте подключение к интернету.
+    echo [ERROR] Failed to download Python archive. Please check your internet connection.
     pause
     exit /b 1
 )
 
-echo [INFO] Распаковка архива...
+echo [INFO] Unpacking archive...
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Expand-Archive -Path '%PYTHON_ZIP%' -DestinationPath '%PYTHON_DIR%' -Force"
 if errorlevel 1 (
-    echo [ERROR] Не удалось распаковать архив Python.
+    echo [ERROR] Failed to unpack Python archive.
     pause
     exit /b 1
 )
 
-echo [INFO] Очистка временных файлов...
+echo [INFO] Cleaning up temporary files...
 del "%PYTHON_ZIP%"
 
 :patch_python
 :: === Patch ._pth file to enable site-packages (pip) ===
-echo [INFO] Настройка Python для работы с пакетами...
+echo [INFO] Patching Python to enable package support...
 for %%f in ("%PTH_FILE_PATTERN%") do (
     powershell -NoProfile -ExecutionPolicy Bypass -Command "(Get-Content -Path '%%f') -replace '#import site', 'import site' | Set-Content -Path '%%f'"
 )
 
 :setup_pip
 :: === Check for pip, install if missing ===
-echo [INFO] Проверка наличия pip...
+echo [INFO] Checking for pip...
 "%PYTHON_EXE%" -m pip --version >nul 2>&1
 if errorlevel 1 (
-    echo [INFO] pip не найден. Загрузка установщика...
+    echo [INFO] pip not found. Downloading installer...
     powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri '%GET_PIP_URL%' -OutFile '%GET_PIP_FILE%'"
     if errorlevel 1 (
-        echo [ERROR] Не удалось загрузить get-pip.py.
+        echo [ERROR] Failed to download get-pip.py.
         pause
         exit /b 1
     )
-    echo [INFO] Установка pip...
+    echo [INFO] Installing pip...
     "%PYTHON_EXE%" "%GET_PIP_FILE%"
     del "%GET_PIP_FILE%"
 )
 
 :: === Install/Upgrade dependencies ===
-echo [INFO] Обновление pip до последней версии...
+echo [INFO] Updating pip to the latest version...
 "%PYTHON_EXE%" -m pip install --upgrade pip >nul
 
 if not exist "%REQUIREMENTS_FILE%" (
-    echo [WARN] Файл requirements.txt не найден. Пропускаю установку зависимостей.
+    echo [WARN] requirements.txt not found. Skipping dependency installation.
     goto :success
 )
 
-echo [INFO] Установка зависимостей из requirements.txt...
+echo [INFO] Installing dependencies from requirements.txt...
 "%PYTHON_EXE%" -m pip install -r "%REQUIREMENTS_FILE%"
 
 :success
 echo.
-echo [SUCCESS] Установка успешно завершена. Среда готова к работе.
+echo [SUCCESS] Setup completed successfully. The environment is ready.
 echo.
 pause
 endlocal
