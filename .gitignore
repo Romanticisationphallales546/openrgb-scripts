@@ -1,0 +1,9 @@
+# Python environment
+python/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VSCode specific
+.vscode/
